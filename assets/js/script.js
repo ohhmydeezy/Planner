@@ -94,15 +94,18 @@ myWorkDay.forEach(function (timeBlock) {
 
 });
 function colorRow(time) {
-    var planNow = dayjs(now).format("HH");
+    var planNow = dayjs().format("HH");
     var planEntry = dayjs(time, "HH").format("HH");
+    console.log(planNow);
     if (planNow > planEntry) {
         return "past";
     } else if (planNow < planEntry) {
         return "future";
     } else {
-        return "present";
+    return "present";
     }
+
+
 }
 
 // save schedule

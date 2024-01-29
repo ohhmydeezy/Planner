@@ -34,7 +34,7 @@ header {
 .row {
     white-space: pre-wrap;
     height: 80px;
-    border-top: 1px solid white;
+    border-top: 1px solid rgb(131, 131, 131);
 }
 
 .hour {
@@ -44,7 +44,7 @@ header {
 }
 
 .past {
-    background-color: #d3d3d3;
+    background-color: #979797;
     color: white;
 }
 
@@ -62,8 +62,8 @@ header {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: #06aed5;
-    color: white;
+    background-color: #34daff;
+    color: rgb(0, 0, 0);
 }
 
 .saveBtn i:hover {
