@@ -38,9 +38,10 @@ header {
 }
 
 .hour {
-    background-color: #ffffff;
+    background-color: #bbbaba;
     color: #000000;
     border-top: 1px dashed #000000;
+    border-left: 5px solid #000000;
 }
 
 .past {
@@ -69,4 +70,13 @@ header {
 .saveBtn i:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
+}
+
+.container {
+    margin-top: 20px;
+
+}
+
+.time-block {
+    border: #000000 5px solid;
 }
