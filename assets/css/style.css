@@ -10,7 +10,7 @@ textarea {
     resize: none;
     color: #000000;
     border-left: 1px solid black;
-    padding: 10px;
+    padding: 2px;
 }
 
 header {
@@ -29,11 +29,12 @@ header {
 .time-block {
     text-align: center;
     border-radius: 15px;
+    border: #000000 5px solid;
 }
 
 .row {
     white-space: pre-wrap;
-    height: 80px;
+    height: 130px;
     border-top: 1px solid rgb(131, 131, 131);
 }
 
@@ -67,6 +68,7 @@ header {
     color: rgb(0, 0, 0);
 }
 
+
 .saveBtn i:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
@@ -74,9 +76,4 @@ header {
 
 .container {
     margin-top: 20px;
-
-}
-
-.time-block {
-    border: #000000 5px solid;
 }

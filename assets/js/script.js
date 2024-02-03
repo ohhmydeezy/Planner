@@ -1,4 +1,4 @@
-var timeblocksContainer = $("#time-blocks")
+var timeblocksContainer = $("#time-block")
 var timeblocksContainer = document.querySelector(".container")
 var now = dayjs().format("HH");
 var saveBtn = $(".saveBtn");
@@ -20,27 +20,24 @@ for (var i = 0; i < myWorkDay.length; i++) {
 myWorkDay.forEach(function (timeBlock) {
     var timeLabel = timeBlock.hour;
     var blockColor = colorRow(timeLabel);
+
     var row = `
-    <div>
-        <div class="row no-gutters input-group">
-            <div class="col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">
-                ${timeLabel}
+        <div class="time-block" id="${timeBlock.id}">
+            <div class="row no-gutters input-group">
+                <div class="col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">
+                    ${timeLabel}
+                </div>
+                <textarea class="form-control time-block ${blockColor}" id="${timeBlock.hour}">${timeBlock.reminder}</textarea>
+                <button class="saveBtn btn-block" type="submit">
+                    <i class="fas fa-save"></i>
+                </button>
             </div>
-            <textarea class="form-control time-block">
-                ${blockColor}
-                ${timeBlock.reminder} 
-            </textarea>
-            <button class="saveBtn btn-block" type="submit">
-                <i class="fas fa-save"></i>
-            </button>
-        </div>
-    </div>;
-`
+        </div>`;
+
     /* Adding rows to container div */
     $(".container").append(row);
-
-
 });
+
 function colorRow(time) {
     var planNow = now;
     var planEntry = time;
@@ -59,14 +56,21 @@ $(".saveBtn").on("click", function () {
     var userInput = $(this).siblings(".time-block").val();
     var hourSpan = $(this).siblings(".hour").text();
     window.localStorage.setItem(hourSpan, userInput);
-});
-// clear schedule
-function clearScreen() {
-    // Clear the options
-    scheduleInput.textContent = "";
-}
 
-$("#clearBtn").on("click", function () {
+    // Display local storage in reminder
+    $(".time-block").each(function () {
+        var timeRow = $(this).attr("id");
+        var userEntry = window.localStorage.getItem(timeRow); // Use timeRow as the key, not userInput
+        if (userEntry !== null) {
+            $(this).val(userEntry); // Update the value of the textarea directly
+        };
+    });
+    console.log(userInput);
+});
+
+// clear schedule
+
+
+$("#clear-cal").on("click", function () {
     window.localStorage.clear();
-    clearScreen();
 });
