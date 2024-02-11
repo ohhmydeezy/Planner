@@ -1,15 +1,18 @@
-var timeblocksContainer = $("#time-block")
-var timeblocksContainer = document.querySelector(".container")
+var timeblocksContainer = $(".timeblocks-container");
 var now = dayjs().format("HH");
 var saveBtn = $(".saveBtn");
 
 
 //display current date and time
 
-var dateTime = $(document).ready(function () {
+$(document).ready(function () {
     var today = dayjs();
     $("#date-time").text("Date: " + today.format("ddd D MMM YYYY, HH:mm"));
+
+
+    //console.log(userInput);
 });
+
 
 
 for (var i = 0; i < myWorkDay.length; i++) {
@@ -35,8 +38,20 @@ myWorkDay.forEach(function (timeBlock) {
         </div>`;
 
     /* Adding rows to container div */
-    $(".timeblocks-container").append(row);
+    timeblocksContainer.append(row);
 });
+function retrievePreviousReminders() {
+    // Display local storage in reminder
+    $(".hour").each(function () {
+        var hourNotes = $(this).text();
+        var previousEntry = localStorage.getItem(hourNotes); // Use hourNotes as the key, not userInput
+        if (hourNotes !== null) {
+            $(this).siblings(".time-block").val(previousEntry); // Update the value of the textarea directly
+        };
+    });
+};
+
+retrievePreviousReminders();
 
 function colorRow(time) {
     var planNow = now;
@@ -55,22 +70,12 @@ function colorRow(time) {
 $(".saveBtn").on("click", function () {
     var userInput = $(this).siblings(".time-block").val();
     var hourSpan = $(this).siblings(".hour").text();
-    window.localStorage.setItem(hourSpan, userInput);
-
-    // Display local storage in reminder
-    $(".time-block").each(function () {
-        var timeRow = $(this).attr("id");
-        var userEntry = window.localStorage.getItem(timeRow); // Use timeRow as the key, not userInput
-        if (userEntry !== null) {
-            $(this).val(userEntry); // Update the value of the textarea directly
-        };
-    });
-    console.log(userInput);
+    localStorage.setItem(hourSpan, userInput);
 });
 
 // clear schedule
 
-
 $("#clear-cal").on("click", function () {
-    window.localStorage.clear();
+    localStorage.clear();
+    location.reload();
 });
