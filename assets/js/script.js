@@ -22,20 +22,20 @@ myWorkDay.forEach(function (timeBlock) {
     var blockColor = colorRow(timeLabel);
 
     var row = `
-        <div class="time-block" id="${timeBlock.id}">
+        <div class="time-block container" id="${timeBlock.id}">
             <div class="row no-gutters input-group">
-                <div class="col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">
+                <div class="col-md-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">
                     ${timeLabel}
                 </div>
-                <textarea class="form-control time-block ${blockColor}" id="${timeBlock.hour}">${timeBlock.reminder}</textarea>
-                <button class="saveBtn btn-block" type="submit">
+                <textarea class="col-md-10 form-control time-block ${blockColor}" id="${timeBlock.hour}">${timeBlock.reminder}</textarea>
+                <button class="col-md-1 saveBtn btn-block" type="submit">
                     <i class="fas fa-save"></i>
                 </button>
             </div>
         </div>`;
 
     /* Adding rows to container div */
-    $(".container").append(row);
+    $(".timeblocks-container").append(row);
 });
 
 function colorRow(time) {
