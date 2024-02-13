@@ -32,37 +32,30 @@ Step 4: Creating the prompts
 
 Since the task was to create a planner for a full work day that saves the user imputs and stores it in the local storage. The first step was to  create log the time and date at the beginning of the planner using days.js.
 
-Once the questions were complete the logic for how the page would dynnamically display the planner with the time, input field and save button displayed on each row corresponding to the time. In additon to this, a function was needed to iterate through the work day planner and display a color coding depending on whether the time of day had already passed, showing red for time that has passed, green for the current time and grey for the future.
+Once this was done, creating an array that logs the time and the empty reminder, this was done in a sperate js file to create cleaner code and easier readability. Once this was done, I elected to create the rows and collums for the planner dynamically using javascript instead of utlising bootstrap in the HTML, this was to create a cleaner HTML file and although it created more challenges, this helped to gain a deeper graps on javascript.
 
 
-![start and question function](./assets/Images/Start%20function.png)
+![script for rows](./assets/Images/script%20for%20rows.png)
 
-Following this, the next step was to create a function the stores in user's input into the local storage so that when the user presses the save button, the user input field is saved as is until they clear the planner. 
+Following this, the next step was to create a function the stores in user's input into the local storage so that when the user presses the save button, the user input field is saved as is until they clear the planner. In addition to this, another step was ensuring that the current hour, furture hour and previous hours were coloir coded according to the user story.  
 
-![check answer and timer function](./assets/Images/check%20answer%20and%20start%20timer%20function%20.png)
+![check answer and timer function](./assets/Images/script%20for%20retrieving%20information%20and%20colour%20code.png)
 
-Following this following this, a clear function button was needed to clear the user input's
+Following this following this, a save button function as well as a clear function button was needed to save the user's input as well as clear the information when the user presses the respective buttons.
 
-![average change](./assets/images/Average.png)
-
-Following this, two if statements were utilised to check the singles greatest increase from month to month and the single greatest loss from month to month.
-
-![]()
-
-Final step: logging the score to a highscore page: 
 
 The final product: 
 ![final product]()
 
-Deployed link: 
+Deployed link: https://ohhmydeezy.github.io/Planner/
 
 Usage: 
 
-    the page can be used to check the net profits and losses for any given finances array manually added to the JS file.
+    the page can be used to create a rough planner for a work day from the morning to the end of the work day.
 
 Credits: 
 
-    Repo is made by myself, initial fiannce array and basic HTML file was provided by the university and the code thereafter was created with the help of my colleagues in the a study group, the help of teaching assistants and research completed on mdn web docs and stack overflow.
+    Repo is made by myself, initial planner basic HTML file was provided by the university and the code thereafter was created by myslef with the help of teaching assistants and research completed on mdn web docs and stack overflow and youtube. 
 
 
 
