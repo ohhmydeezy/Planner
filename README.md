@@ -44,9 +44,6 @@ Following this, the next step was to create a function the stores in user's inpu
 Following this following this, a save button function as well as a clear function button was needed to save the user's input as well as clear the information when the user presses the respective buttons.
 
 
-The final product: 
-![final product]()
-
 Deployed link: https://ohhmydeezy.github.io/Planner/
 
 Usage: 
